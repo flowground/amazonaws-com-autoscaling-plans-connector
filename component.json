@@ -1,0 +1,142 @@
+{
+    "title": "AWS Auto Scaling Plans",
+    "description": "<fullname>AWS Auto Scaling</fullname> <p>Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic scaling and predictive scaling for your resources using scaling plans. Use this service in conjunction with the Amazon EC2 Auto Scaling, Application Auto Scaling, Amazon CloudWatch, and AWS CloudFormation services. </p> <p>Currently, predictive scaling is only available for Amazon EC2 Auto Scaling groups.</p> <p>For more information about AWS Auto Scaling, including information about granting IAM users required permissions for AWS Auto Scaling actions, see the <a href=\"https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html\">AWS Auto Scaling User Guide</a>.</p>",
+    "docsUrl": "https://aws.amazon.com/autoscaling/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/autoscaling-plans/2018-01-06/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://autoscaling.amazonaws.com/",
+                    "http://autoscaling.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "CreateScalingPlan": {
+            "main": "./lib/actions/CreateScalingPlan.js",
+            "title": "Creates a scaling plan.",
+            "description": "Creates a scaling plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateScalingPlan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteScalingPlan": {
+            "main": "./lib/actions/DeleteScalingPlan.js",
+            "title": "<p>Deletes the specified scaling plan.</p> <p>Deleting a scaling plan deletes the underlying <a>ScalingInstruction</a> for all of the scalable resources that are covered by the plan.</p> <p>If the plan has launched resources or has scaling activities in progress, you must delete those resources separately.</p>",
+            "description": "<p>Deletes the specified scaling plan.</p> <p>Deleting a scaling plan deletes the underlying <a>ScalingInstruction</a> for all of the scalable resources that are covered by the plan.</p> <p>If the plan has launched resources or has scaling activities in progress, you must delete those resources separately.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteScalingPlan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeScalingPlanResources": {
+            "main": "./lib/actions/DescribeScalingPlanResources.js",
+            "title": "Describes the scalable resources in the specified scaling plan.",
+            "description": "Describes the scalable resources in the specified scaling plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeScalingPlanResources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeScalingPlans": {
+            "main": "./lib/actions/DescribeScalingPlans.js",
+            "title": "Describes one or more of your scaling plans.",
+            "description": "Describes one or more of your scaling plans.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeScalingPlans.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetScalingPlanResourceForecastData": {
+            "main": "./lib/actions/GetScalingPlanResourceForecastData.js",
+            "title": "<p>Retrieves the forecast data for a scalable resource.</p> <p>Capacity forecasts are represented as predicted values, or data points, that are calculated using historical data points from a specified CloudWatch load metric. Data points are available for up to 56 days. </p>",
+            "description": "<p>Retrieves the forecast data for a scalable resource.</p> <p>Capacity forecasts are represented as predicted values, or data points, that are calculated using historical data points from a specified CloudWatch load metric. Data points are available for up to 56 days. </p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetScalingPlanResourceForecastData.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateScalingPlan": {
+            "main": "./lib/actions/UpdateScalingPlan.js",
+            "title": "<p>Updates the specified scaling plan.</p> <p>You cannot update a scaling plan if it is in the process of being created, updated, or deleted.</p>",
+            "description": "<p>Updates the specified scaling plan.</p> <p>You cannot update a scaling plan if it is in the process of being created, updated, or deleted.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateScalingPlan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

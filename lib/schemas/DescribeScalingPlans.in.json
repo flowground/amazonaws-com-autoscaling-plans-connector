@@ -1,0 +1,110 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ApplicationSources": {
+                    "description": "The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.",
+                    "items": {
+                        "description": "Represents an application source.",
+                        "properties": {
+                            "CloudFormationStackARN": {
+                                "description": "The Amazon Resource Name (ARN) of a AWS CloudFormation stack.",
+                                "type": "string",
+                                "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                            },
+                            "TagFilters": {
+                                "description": "A set of tags (up to 50).",
+                                "items": {
+                                    "description": "Represents a tag.",
+                                    "properties": {
+                                        "Key": {
+                                            "description": "The tag key.",
+                                            "maxLength": 128,
+                                            "minLength": 1,
+                                            "type": "string",
+                                            "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                                        },
+                                        "Values": {
+                                            "description": "The tag values (0 to 20).",
+                                            "items": {
+                                                "maxLength": 256,
+                                                "minLength": 1,
+                                                "type": "string",
+                                                "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "MaxResults": {
+                    "description": "The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.",
+                    "type": "integer"
+                },
+                "NextToken": {
+                    "description": "The token for the next set of results.",
+                    "type": "string"
+                },
+                "ScalingPlanNames": {
+                    "description": "The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.",
+                    "items": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "pattern": "[\\p{Print}&&[^|:/]]+",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "ScalingPlanVersion": {
+                    "description": "The version number of the scaling plan. If you specify a scaling plan version, you must also specify a scaling plan name.",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
