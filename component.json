@@ -1,6 +1,6 @@
 {
     "title": "AWS Auto Scaling Plans",
-    "description": "<fullname>AWS Auto Scaling</fullname> <p>Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic scaling and predictive scaling for your resources using scaling plans. Use this service in conjunction with the Amazon EC2 Auto Scaling, Application Auto Scaling, Amazon CloudWatch, and AWS CloudFormation services. </p> <p>Currently, predictive scaling is only available for Amazon EC2 Auto Scaling groups.</p> <p>For more information about AWS Auto Scaling, including information about granting IAM users required permissions for AWS Auto Scaling actions, see the <a href=\"https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html\">AWS Auto Scaling User Guide</a>.</p>",
+    "description": "AWS Auto Scaling Use AWS Auto Scaling to quickly discover all the scalable AWS\nresources for your application and configure dynamic scaling and predictive\nscaling for your resources using scaling plans. Use this service in conjunction\nwith the Amazon EC2 Auto Scaling, Application Auto Scaling, Amazon CloudWatch,\nand AWS CloudFormation services. \n\nCurrently, predictive scaling is only available for Amazon EC2 Auto Scaling\ngroups.\n\nFor more information about AWS Auto Scaling, including information about\ngranting IAM users required permissions for AWS Auto Scaling actions, see the \nAWS Auto Scaling User Guide\n[https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html]\n.",
     "docsUrl": "https://aws.amazon.com/autoscaling/",
     "url": "https://api.apis.guru/v2/specs/amazonaws.com/autoscaling-plans/2018-01-06/swagger.json",
     "envVars": {},
@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "CreateScalingPlan": {
             "main": "./lib/actions/CreateScalingPlan.js",
-            "title": "Creates a scaling plan.",
+            "title": "CreateScalingPlan",
             "description": "Creates a scaling plan.",
             "fields": {
                 "verbose": {
@@ -55,8 +55,8 @@
         },
         "DeleteScalingPlan": {
             "main": "./lib/actions/DeleteScalingPlan.js",
-            "title": "<p>Deletes the specified scaling plan.</p> <p>Deleting a scaling plan deletes the underlying <a>ScalingInstruction</a> for all of the scalable resources that are covered by the plan.</p> <p>If the plan has launched resources or has scaling activities in progress, you must delete those resources separately.</p>",
-            "description": "<p>Deletes the specified scaling plan.</p> <p>Deleting a scaling plan deletes the underlying <a>ScalingInstruction</a> for all of the scalable resources that are covered by the plan.</p> <p>If the plan has launched resources or has scaling activities in progress, you must delete those resources separately.</p>",
+            "title": "DeleteScalingPlan",
+            "description": "Deletes the specified scaling plan.\n\nDeleting a scaling plan deletes the underlying ScalingInstruction for all of the\nscalable resources that are covered by the plan.\n\nIf the plan has launched resources or has scaling activities in progress, you\nmust delete those resources separately.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -72,7 +72,7 @@
         },
         "DescribeScalingPlanResources": {
             "main": "./lib/actions/DescribeScalingPlanResources.js",
-            "title": "Describes the scalable resources in the specified scaling plan.",
+            "title": "DescribeScalingPlanResources",
             "description": "Describes the scalable resources in the specified scaling plan.",
             "fields": {
                 "verbose": {
@@ -89,7 +89,7 @@
         },
         "DescribeScalingPlans": {
             "main": "./lib/actions/DescribeScalingPlans.js",
-            "title": "Describes one or more of your scaling plans.",
+            "title": "DescribeScalingPlans",
             "description": "Describes one or more of your scaling plans.",
             "fields": {
                 "verbose": {
@@ -106,8 +106,8 @@
         },
         "GetScalingPlanResourceForecastData": {
             "main": "./lib/actions/GetScalingPlanResourceForecastData.js",
-            "title": "<p>Retrieves the forecast data for a scalable resource.</p> <p>Capacity forecasts are represented as predicted values, or data points, that are calculated using historical data points from a specified CloudWatch load metric. Data points are available for up to 56 days. </p>",
-            "description": "<p>Retrieves the forecast data for a scalable resource.</p> <p>Capacity forecasts are represented as predicted values, or data points, that are calculated using historical data points from a specified CloudWatch load metric. Data points are available for up to 56 days. </p>",
+            "title": "GetScalingPlanResourceForecastData",
+            "description": "Retrieves the forecast data for a scalable resource.\n\nCapacity forecasts are represented as predicted values, or data points, that are\ncalculated using historical data points from a specified CloudWatch load metric.\nData points are available for up to 56 days.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -123,8 +123,8 @@
         },
         "UpdateScalingPlan": {
             "main": "./lib/actions/UpdateScalingPlan.js",
-            "title": "<p>Updates the specified scaling plan.</p> <p>You cannot update a scaling plan if it is in the process of being created, updated, or deleted.</p>",
-            "description": "<p>Updates the specified scaling plan.</p> <p>You cannot update a scaling plan if it is in the process of being created, updated, or deleted.</p>",
+            "title": "UpdateScalingPlan",
+            "description": "Updates the specified scaling plan.\n\nYou cannot update a scaling plan if it is in the process of being created,\nupdated, or deleted.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
